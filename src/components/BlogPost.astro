@@ -1,4 +1,6 @@
 ---
+import { Formatter } from "../utils/formater";
+
 const {frontmatter, url} = Astro.props;
 ---
 
@@ -8,6 +10,6 @@ const {frontmatter, url} = Astro.props;
     <a href={url} class="text-xl font-semibold hover:underline text-white">
       {frontmatter.description}
     </a>
-    <span class="text-sm text-gray-300">{frontmatter.date}</span>
+    <span class="text-sm text-gray-300">{Formatter.formatDate(frontmatter.date)}</span>
   </div>
 </div>
