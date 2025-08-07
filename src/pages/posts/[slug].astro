@@ -16,8 +16,11 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 const { post } = Astro.props;
 const frontmatter = post.data;
+const { Content, headings } = await post.render();
 ---
 <BlogLayout title={frontmatter.title}>
   <h1 class="text-xs text-gray-500 mb-0">{frontmatter.title}</h1>
   <h4 class="text-md text-gray-400 mb-0">{frontmatter.author}</h4>
+  <!-- Contenido -->
+  <Content />
 </BlogLayout>
