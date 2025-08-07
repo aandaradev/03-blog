@@ -15,7 +15,8 @@ export const getStaticPaths = (async () => {
   // }];
 }) satisfies GetStaticPaths;
 const { post } = Astro.props;
+const frontmatter = post.data;
 ---
-<BlogLayout title={post.data.title}>
+<BlogLayout title={frontmatter.title}>
   <h1>Hola Mundo</h1>
 </BlogLayout>
